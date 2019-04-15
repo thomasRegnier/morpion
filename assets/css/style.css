@@ -1,0 +1,28 @@
+
+.container{
+    margin-top: 50px;
+    width: 600px;
+}
+
+.case{
+
+    border: 1px solid black;
+    width: 33.33%;
+    height: 200px;
+    cursor: pointer;
+    font-size: 80px;
+    cursor: pointer;
+}
+
+.userCircle{
+    color: blue;
+}
+
+.userCross{
+    color: red;
+}
+
+.up{
+    display: flex;
+    justify-content: space-around;
+}
