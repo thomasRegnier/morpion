@@ -2,11 +2,13 @@ let i = 0
 
 let  play = 0
 
+let lap = 0
 
 let scoreCross = 0
 let scoreCircle = 0
 
 
+let forWinner = document.querySelector('.forWinner')
 
 let scoreUserCross = document.querySelector('.scoreUserCross')
 
@@ -46,65 +48,93 @@ const letsGo = function(){
 
         myCase.addEventListener('click', function () {
 
+            lap++
+            console.log(lap)
+            forWinner.innerText = ""
+
 
             if (i === 0 && !this.getAttribute('play')) {
                 this.innerHTML = '<i class="fas fa-times"></i>'
-                myCase.style.color = "red"
-
+                myCase.style.color = "#ff3f3f"
                 this.setAttribute('play', 'userCross')
                 i = 1
-                console.log(this)
+              //  console.log(this)
                 userCross.push(this.getAttribute('id'))
                 //  console.log(userCross)
 
                 if (result(userCross)) {
+                    lap = 0
                     play++
                     mancheText.innerText = play
                     scoreCross++
                     scoreUserCross.innerText = scoreCross
-                    delContainer()
+                    forWinner.innerText = "Cross player Win"
+                  setTimeout(function () {
+                      delContainer()
+                  }, 800)
+
                 }
 
             }
             else if(i === 1 && !this.getAttribute('play')){
                 this.innerHTML = '<i class="far fa-circle"></i>'
-                myCase.style.color = "blue"
+                myCase.style.color = "#3f85ff"
                 this.setAttribute('play', 'userCircle')
                 i = 0
-                console.log(this)
+             //   console.log(this)
                 userCircle.push(this.getAttribute('id'))
 
                 if (result(userCircle)) {
+                    lap = 0
                     play++
                     mancheText.innerText = play
                     scoreCircle++
                     scoreUserCircle.innerText = scoreCircle
-                    delContainer()
+                    forWinner.innerText = "Circle player Win"
+                    setTimeout(function () {
+                        delContainer()
+                    }, 800)
 
                 }
             }
 
+            if(lap >= 9){
+                forWinner.innerText = "Egalité"
+                setTimeout(function () {
+                    delContainer()
+                    lap = 0
+                }, 800)
+            }
 
-            if (scoreCross === 2) {
+
+            if (scoreCross - scoreCircle === 2) {
 
                 // alert('UserCoss a gagné la partie')
-                if (window.confirm("UserCoss a gagné la partie, Voulez-vous recommencez?")) {
+            setTimeout(function () {
+
+                if (window.confirm("UserCross a gagné la partie, Voulez-vous recommencez?")) {
                     location.reload()
                 }
                 else{
                     return
                 }
+
+
+            }, 800)
             }
-            else if(scoreCircle === 2){
+            else if(scoreCircle - scoreCross === 2){
 
                 //  alert('UserCircle a gagné la partie')
+                setTimeout(function () {
 
-                if (window.confirm("UserCoss a gagné la partie, Voulez-vous recommencez?")) {
-                    location.reload()
-                }
-                else{
-                    return
-                }
+                    if (window.confirm("UserCircle a gagné la partie, Voulez-vous recommencez?")) {
+                        location.reload()
+                    }
+                    else{
+                        return
+                    }
+
+                }, 800)
             }
 
         })
@@ -145,3 +175,20 @@ const delContainer = function () {
         userCircle = []
     }
 }
+
+
+let forStart = document.querySelector('.btn')
+
+let backGround = document.querySelector('.forStart')
+
+forStart.addEventListener('click', function () {
+    showMe()
+})
+
+
+
+const showMe = function () {
+    backGround.classList.add('fadeOut')
+    console.log("hgg")
+}
+

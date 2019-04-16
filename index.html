@@ -18,9 +18,9 @@
 
 <body>
 <div class="up">
-<div><div>Manche :<span class="manche"></span></div></div>
-<div class="userCross">Score UserCross :<span class="scoreUserCross"></span></div>
-<div class="userCircle">Score UserCircle :<span class="scoreUserCircle"></span></div>
+<div><div class="alert alert-light" style="background-color: #949494">Manche : <span class="manche"></span></div></div>
+<div class="userCross alert alert-danger" style="background-color: #ff3f3f">Score UserCross : <span class="scoreUserCross"></span></div>
+<div class="userCircle alert alert-primary" style="background-color: #3f85ff">Score UserCircle : <span class="scoreUserCircle"></span></div>
 </div>
 <div class="container">
     <div class="row">
@@ -30,7 +30,7 @@
     </div>
     <div class="row">
         <div class="col-4 case d-flex align-items-center justify-content-center case" id="b1"></div>
-        <div class="col-4 case d-flex align-items-center justify-content-center case" id="b2"></div>
+        <div class="col-4 case d-flex align-items-center justify-content-center case"  id="b2"></div>
         <div class="col-4 case d-flex align-items-center justify-content-center case" id="b3"></div>
 </div>
     <div class="row">
@@ -39,7 +39,11 @@
         <div class="col-4 case d-flex align-items-center justify-content-center case" id="c3"></div>
     </div>
 </div>
+<div class="forWinner"></div>
 
+<section class="forStart d-flex align-items-center justify-content-center">
+    <button type="button" class="btn">Start Game</button>
+</section>
 </body>
 
 <script src="assets/js/jquery-3.3.1.slim.min.js"></script>

@@ -1,28 +1,78 @@
 
 .container{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 600px;
 }
 
 .case{
 
-    border: 1px solid black;
-    width: 33.33%;
+    width: 200px;
     height: 200px;
     cursor: pointer;
     font-size: 80px;
     cursor: pointer;
+    background-color: white;
+    border: 2px solid lightgrey;
+    border-radius: 5%;
+    margin: 5px;
 }
 
-.userCircle{
-    color: blue;
+.alert{
+    color: white;
 }
 
-.userCross{
-    color: red;
+.row{
+    flex-wrap: nowrap;
 }
+
 
 .up{
     display: flex;
     justify-content: space-around;
+}
+
+body{
+    background-color: royalblue;
+}
+
+.forWinner{
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    color: white;
+}
+
+
+.scoreUserCircle, .scoreUserCross{
+    font-weight: bold;
+
+}
+
+.forStart{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: royalblue;
+}
+
+.btn{
+    background-color: white;
+    color: royalblue;
+    font-size: 160%;
+}
+
+
+
+.fadeOut{
+    animation: forwards fadeOut 0.5s ease-in-out;
+}
+
+
+@keyframes fadeOut {
+    to{
+        opacity: 0;
+        z-index: -11;
+    }
 }
